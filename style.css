@@ -1,0 +1,49 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #000;
+}
+
+.image-container {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.image-container img {
+    width: 100%;
+    display: block;
+}
+
+/* Click Zones */
+
+/* Top phone */
+.call-top {
+    position: absolute;
+    top: 17%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 5%;
+}
+
+/* Middle phone */
+.call-middle {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 5%;
+}
+
+/* Bottom CTA */
+.call-bottom {
+    position: absolute;
+    bottom: 12%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 6%;
+}
