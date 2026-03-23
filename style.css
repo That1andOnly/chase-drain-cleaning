@@ -1,49 +1,107 @@
 body {
     margin: 0;
-    padding: 0;
     background: #000;
+    overflow-x: hidden;
 }
 
+/* Container */
 .image-container {
     position: relative;
     width: 100%;
     max-width: 1000px;
     margin: auto;
+    overflow: hidden;
 }
 
+/* Image animation (subtle zoom = alive feel) */
 .image-container img {
     width: 100%;
     display: block;
+    animation: slowZoom 20s infinite alternate ease-in-out;
 }
 
-/* Click Zones */
+/* Breathing zoom */
+@keyframes slowZoom {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.05); }
+}
 
-/* Top phone */
-.call-top {
+/* Water shimmer overlay */
+.image-container::after {
+    content: "";
     position: absolute;
-    top: 17%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 60%;
-    height: 5%;
+    top: 0;
+    left: -100%;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        transparent 40%,
+        rgba(255,255,255,0.08) 50%,
+        transparent 60%
+    );
+    animation: shimmer 6s infinite;
 }
 
-/* Middle phone */
-.call-middle {
-    position: absolute;
-    top: 55%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 60%;
-    height: 5%;
+@keyframes shimmer {
+    0% { left: -100%; }
+    100% { left: 100%; }
 }
 
-/* Bottom CTA */
+/* Click zones */
+.call-top,
+.call-middle,
 .call-bottom {
     position: absolute;
-    bottom: 12%;
     left: 50%;
     transform: translateX(-50%);
-    width: 60%;
+    width: 65%;
+    cursor: pointer;
+}
+
+/* Tap feedback */
+.call-top:active,
+.call-middle:active,
+.call-bottom:active {
+    background: rgba(255,255,255,0.15);
+    border-radius: 8px;
+}
+
+/* Positions (tweak if needed) */
+.call-top {
+    top: 18%;
     height: 6%;
 }
+
+.call-middle {
+    top: 56%;
+    height: 6%;
+}
+
+.call-bottom {
+    bottom: 13%;
+    height: 7%;
+}
+
+/* 🔥 Floating Call Button */
+.floating-call {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #ffb703;
+    color: black;
+    padding: 15px 20px;
+    border-radius: 50px;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 0 15px rgba(255,183,3,0.8);
+    animation: pulse 2s infinite;
+    z-index: 999;
+}
+
+/* Pulse animation */
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(255,183,3, 0.7); }
+    70% { box-shadow: 0 0 0 15px rgba(255,183,3, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255,183,3, 0); }
+    }
