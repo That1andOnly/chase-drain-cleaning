@@ -3,36 +3,61 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CHASE Drain Cleaning | 24/7 Emergency Plumbing</title>
-<link rel="stylesheet" href="style.css">
+<title>CHASE Drain Cleaning</title>
+
+<style>
+body { margin:0; background:#000; }
+
+/* URGENCY BAR */
+.urgency-bar {
+position:fixed;
+top:0;
+width:100%;
+background:red;
+color:white;
+text-align:center;
+padding:10px;
+font-weight:bold;
+z-index:1000;
+}
+
+/* IMAGE */
+.container {
+position:relative;
+margin-top:50px;
+}
+
+img {
+width:100%;
+display:block;
+}
+
+/* FLOAT BUTTON */
+.call-btn {
+position:fixed;
+bottom:20px;
+right:20px;
+background:yellow;
+padding:15px;
+border-radius:50%;
+font-size:20px;
+text-decoration:none;
+}
+</style>
+
 </head>
+
 <body>
 
-<!-- 🚨 URGENCY BAR -->
 <div class="urgency-bar">
-    🚨 24/7 EMERGENCY SERVICE — AVAILABLE NOW
+🚨 CALL NOW — 702-556-3767
 </div>
 
-<div class="image-container">
-    <img src="chase-drain-cleaning.png" alt="CHASE Drain Cleaning">
+<div class="container">
+<img src="chase-drain-cleaning.png">
 
-    <!-- Click zones -->
-    <a href="tel:7025563767" class="call-top"></a>
-    <a href="tel:7025563767" class="call-middle"></a>
-    <a href="tel:7025563767" class="call-bottom"></a>
+<a href="tel:7025563767" class="call-btn">📞</a>
 </div>
-
-<!-- 🔥 Sticky Call Bar -->
-<a href="tel:7025563767" class="sticky-call">
-    📞 Tap to Call Now — 702-556-3767
-</a>
-
-<!-- Floating button -->
-<a href="tel:7025563767" class="floating-call">
-    📞
-</a>
-
-<script src="script.js"></script>
 
 </body>
 </html>
